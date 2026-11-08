@@ -1,0 +1,13 @@
+{
+  "name": "aithris",
+  "private": true,
+  "description": "Pinned copies of openly licensed models, released for apps to download and hash-check.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "test": "node --test",
+    "release:dry-run": "node scripts/release.ts --dry-run"
+  }
+}

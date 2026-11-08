@@ -1,0 +1,24 @@
+# The manifest's checks and the scripts' tests (docs/testing.md). Nothing here is a required
+# check, so a workflow-level filter skips Markdown and docs/, which no check reads (ai-insights
+# agent-conventions §4). Before a check becomes required, move the skip into a job-level `if:`.
+name: ci
+
+on:
+  pull_request:
+    paths-ignore: ['**/*.md', 'docs/**']
+  push:
+    branches: [main]
+    paths-ignore: ['**/*.md', 'docs/**']
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: '.nvmrc'
+      - run: npm test
