@@ -1,0 +1,47 @@
+# Releases each model in models.json that has no release yet (docs/adr/0001): downloads its files
+# at the pinned revision, refuses any whose size or SHA-256 differs, and publishes them with the
+# license under the model's tag. Released models are only checked, never changed. A pull request
+# that touches the release runs it as a dry run with a read-only token (ai-insights
+# agent-conventions §4). Not a required check, so it filters by path.
+name: release
+
+on:
+  push:
+    branches: [main]
+    paths: ['models.json', 'licenses/**', 'scripts/**', '.github/workflows/release.yml']
+  pull_request:
+    paths: ['models.json', 'licenses/**', 'scripts/**', '.github/workflows/release.yml']
+  workflow_dispatch:
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  dry-run:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: '.nvmrc'
+      - run: node scripts/release.ts --dry-run
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+  release:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: '.nvmrc'
+      - run: node scripts/release.ts
+        env:
+          GH_TOKEN: ${{ github.token }}
