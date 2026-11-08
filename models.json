@@ -1,0 +1,31 @@
+{
+  "models": [
+    {
+      "id": "paraphrase-multilingual-minilm-l12-v2-int8",
+      "name": "paraphrase-multilingual-MiniLM-L12-v2 (int8 ONNX)",
+      "license": "Apache-2.0",
+      "authors": "sentence-transformers (the model); Xenova (the ONNX export)",
+      "source": {
+        "repository": "Xenova/paraphrase-multilingual-MiniLM-L12-v2",
+        "revision": "2c4055b12046f11709e9df2c122e59ffbdc2f900"
+      },
+      "files": [
+        {
+          "path": "onnx/model_quantized.onnx",
+          "sha256": "66fc00f5f29afcaff34092e1bdd20008ca3918265a82fb9695a551e510cc4ebc",
+          "size": 118308126
+        },
+        {
+          "path": "tokenizer.json",
+          "sha256": "b60b6b43406a48bf3638526314f3d232d97058bc93472ff2de930d43686fa441",
+          "size": 17082913
+        },
+        {
+          "path": "tokenizer_config.json",
+          "sha256": "3f5961b9ac86288cccdb97f32fb848d6187c78e1603958c53f3ea1f296b7d8a2",
+          "size": 496
+        }
+      ]
+    }
+  ]
+}
