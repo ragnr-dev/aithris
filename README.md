@@ -39,5 +39,9 @@ npm test                    # the manifest's checks and the scripts' tests
 npm run release:dry-run     # download and check every unreleased model (needs gh)
 ```
 
-The model files belong to their authors, under their licenses. This repository
-redistributes them unchanged.
+## License
+
+This repository's own files (the scripts, workflows and docs) are under the
+[Mozilla Public License 2.0](LICENSE). The model files belong to their authors,
+under their own licenses, which are in `licenses/` and attached to each release;
+this repository redistributes them unchanged.
