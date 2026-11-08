@@ -33,8 +33,8 @@ app refuse it, and must never happen by accident.
 
 ## Consequences
 
-- Turning on GitHub's immutable releases for this repository would make "never
-  replaced" a platform rule, not just a convention.
+- GitHub's immutable releases are on for this repository (2026-11-08), so
+  "never replaced" is a platform rule, not just a convention.
 - Adding a model is a pull request with no code.
 
 ## Alternatives Considered

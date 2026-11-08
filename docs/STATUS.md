@@ -9,6 +9,10 @@
   published by the release workflow on merge (2026-11-08): the three files at
   their pinned sizes, and `LICENSE.txt`.
 
+- **Immutable releases** turned on, so no tag or asset can be replaced
+  (ADR-0001), and **MPL-2.0** for this repository's own files; the model files
+  keep their own licenses (2026-11-08).
+
 ## In progress
 
 - None.
@@ -17,10 +21,7 @@
 
 ### Needs a human decision
 
-1. **Turn on immutable releases** for this repository (Settings, General,
-   Releases), so no tag or asset can be replaced (ADR-0001).
-2. **A license for this repository's own scripts.** The model files keep their
-   own licenses.
+- None.
 
 ### Agent-actionable
 
