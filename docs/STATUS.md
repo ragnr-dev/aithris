@@ -14,7 +14,9 @@
 
 ## In progress
 
-- None.
+- **`Qwen2.5-1.5B-Instruct` (MLC q4f16_1)** for WebGPU in the browser: the
+  weights, config and tokenizer at revision `9bd564b`, 34 files, about 876 MB.
+  Released on merge.
 
 ## Outstanding
 
