@@ -14,6 +14,7 @@ moved or replaced.
 |---|---|---|
 | `paraphrase-multilingual-MiniLM-L12-v2`, int8 ONNX: sentence embeddings, about 50 languages | Apache-2.0 | `paraphrase-multilingual-minilm-l12-v2-int8-2c4055b` |
 | `Qwen2.5-1.5B-Instruct`, MLC q4f16_1 build: a small instruct model for WebGPU in the browser (WebLLM), about 876 MB | Apache-2.0 | `qwen2-5-1-5b-instruct-q4f16-1-mlc-9bd564b` (on merge) |
+| The same model, MLC q4f32_1 build, for GPUs without 16-bit float shaders, about 876 MB | Apache-2.0 | `qwen2-5-1-5b-instruct-q4f32-1-mlc-a822ee4` (on merge) |
 
 ## Using a release
 
